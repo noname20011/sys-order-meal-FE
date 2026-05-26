@@ -1,5 +1,4 @@
-import React from "react";
-import { Heart, Utensils, Leaf } from "lucide-react";
+import { Heart, Utensils } from "lucide-react";
 
 export const Footer = () => (
   <footer className="py-12 border-t border-brand-gray-100 text-center print:hidden font-sans">
@@ -11,7 +10,7 @@ export const Footer = () => (
       Clean Eating • Healthy Living
     </p>
     <p className="text-brand-gray-900/40 text-sm font-medium">
-      © 2024 Healthy Box Team. Passionate about nutrition.
+      © 2024 Gác Bếp Team. Dinh dưỡng trọn vẹn.
     </p>
   </footer>
 );

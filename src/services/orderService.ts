@@ -1,4 +1,4 @@
-import { BaseService } from "@/src/api/baseService";
+import { BaseService } from "@/api/baseService";
 
 export class ClassService<T> extends BaseService<T> {
   constructor(endpoint: string) {

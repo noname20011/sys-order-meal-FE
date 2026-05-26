@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Check } from "lucide-react";
-import { cn } from "@/src/lib/utils";
-import Loading from "@/src/components/common/Loading";
+import { cn } from "@/lib/utils";
+import Loading from "@/components/common/Loading";
 
 interface SelectItem {
   id: string | number;

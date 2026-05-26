@@ -1,6 +1,6 @@
-import { PageWrapper } from '@/src/components/common/Layout';
+import { PageWrapper } from '@/components/common/Layout';
 import { Clock, Info, MapPin, Phone, Printer } from 'lucide-react';
-import { Order } from '../../types';
+import { Order } from '@/types';
 
 export const Operations = ({ orders }: { orders: Order[] }) => {
   return (
