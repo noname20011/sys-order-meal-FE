@@ -1,7 +1,7 @@
-import { Analytics } from "@/src/pages/admin/Analytics";
-import { Operations } from "@/src/pages/admin/Operations";
-import { Step3Information } from "@/src/pages/client/checkout/CheckoutComponents";
-import { MealSelection } from "@/src/pages/client/menu/MealSelection";
+import { Analytics } from "@/pages/admin/Analytics";
+import { Operations } from "@/pages/admin/Operations";
+import { Step3Information } from "@/pages/client/checkout/CheckoutComponents";
+import { MealSelection } from "@/pages/client/menu/MealSelection";
 import { BarChart3, LayoutDashboard, Truck } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import { Footer } from "./components/common/Footer";

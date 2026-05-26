@@ -1,8 +1,7 @@
-import Button from "@/src/components/common/Button";
-import { PageWrapper } from "@/src/components/common/Layout";
-import { USER_CHOOSE_PACKAGE } from "@/src/constants";
-import { gasService } from "@/src/services/gasService";
-import { UserChoosePackage } from "@/src/types";
+import Button from "@/components/common/Button";
+import { PageWrapper } from "@/components/common/Layout";
+import { USER_CHOOSE_PACKAGE } from "@/constants";
+import { UserChoosePackage } from "@/types";
 import {
   AlertCircle,
   ArrowLeft,
@@ -56,32 +55,6 @@ export const SuccessStep = ({
   const [error, setError] = useState<string | null>(null);
 
   const activeOrderId = orderId || routeOrderId || "";
-
-  // Standalone dynamic fetch if accessed directly or reloaded
-  useEffect(() => {
-    if (routeOrderId && !fullName) {
-      setLoading(true);
-      setError(null);
-      gasService
-        .fetchOrderById(routeOrderId)
-        .then((orderData) => {
-          if (orderData) {
-            setLocalOrder(orderData);
-          } else {
-            setError(
-              "Không tìm thấy thông tin hóa đơn. Vui lòng kiểm tra lại đường dẫn.",
-            );
-          }
-        })
-        .catch((err) => {
-          console.error("Lỗi lấy thông tin hóa đơn:", err);
-          setError("Lỗi kết nối máy chủ. Vui lòng thử lại sau.");
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
-  }, [routeOrderId, fullName]);
 
   // Map display values preferring props, falling back to fetched localOrder
   const displayFullName = fullName || localOrder?.fullName || "";

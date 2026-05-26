@@ -1,11 +1,11 @@
-import Button from "@/src/components/common/Button";
-import { Header } from "@/src/components/common/Header";
-import { PageWrapper } from "@/src/components/common/Layout";
+import Button from "@/components/common/Button";
+import { Header } from "@/components/common/Header";
+import { PageWrapper } from "@/components/common/Layout";
 import { Check, ShoppingBag } from "lucide-react";
 import { motion } from "motion/react";
-import { MENU_COORDINATES, WEEKDAYS } from "../../../constants";
-import { cn } from "../../../lib/utils";
-import { MealType, MenuItem, Weekday } from "../../../types";
+import { MENU_COORDINATES, WEEKDAYS } from "@/constants";
+import { cn } from "@/lib/utils";
+import { MealType, MenuItem, Weekday } from "@/types";
 
 interface MealSelectionProps {
   menu: MenuItem[];
@@ -46,6 +46,7 @@ export const MealSelection = ({
   const selectedCount = Object.values(selectedMeals).reduce((sum, qty) => sum + qty, 0);
   const totalRequired = selectedPlan * selectedMealCount;
 
+  console.log(menu);
   return (
     <PageWrapper>
       <Header

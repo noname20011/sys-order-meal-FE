@@ -1,18 +1,17 @@
-import { GlassAlert } from "@/src/components/common/Alert";
-import Button from "@/src/components/common/Button";
-import { Header } from "@/src/components/common/Header";
-import Input from "@/src/components/common/Input";
-import InputNumber from "@/src/components/common/InputNumber";
-import InputTime from "@/src/components/common/InputTime";
-import InputTimeAutoFill from "@/src/components/common/InputTimeAutoFill";
-import Loading from "@/src/components/common/Loading";
-import Select from "@/src/components/common/Select";
-import { TIME_DELIVERY, USER_CHOOSE_PACKAGE } from "@/src/constants";
-import { useFetchData } from "@/src/hooks/useBaseQuery";
-import { useDebounce } from "@/src/hooks/useDebounce";
-import { cn } from "@/src/lib/utils";
-import customerService from "@/src/services/customerService";
-import { Customer, District, UserChoosePackage } from "@/src/types";
+import { GlassAlert } from "@/components/common/Alert";
+import Button from "@/components/common/Button";
+import { Header } from "@/components/common/Header";
+import Input from "@/components/common/Input";
+import InputNumber from "@/components/common/InputNumber";
+import InputTime from "@/components/common/InputTime";
+import InputTimeAutoFill from "@/components/common/InputTimeAutoFill";
+import Select from "@/components/common/Select";
+import { TIME_DELIVERY, USER_CHOOSE_PACKAGE } from "@/constants";
+import { useFetchData } from "@/hooks/useBaseQuery";
+import { useDebounce } from "@/hooks/useDebounce";
+import { cn } from "@/lib/utils";
+import customerService from "@/services/customerService";
+import { Customer, District, UserChoosePackage } from "@/types";
 import {
   Banknote,
   MapPin,

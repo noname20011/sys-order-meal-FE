@@ -1,7 +1,6 @@
-import React from "react";
 import { motion } from "motion/react";
-import { Activity } from "lucide-react";
-import { cn } from "../../lib/utils";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 export const PageWrapper = ({ children }: { children: React.ReactNode }) => (
   <motion.div

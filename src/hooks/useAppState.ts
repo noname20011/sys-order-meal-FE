@@ -3,17 +3,15 @@ import {
   MOCK_MEAL_DATA,
   USER_CHOOSE_PACKAGE,
   WEEKDAYS,
-} from "@/src/constants";
-import { gasService } from "@/src/services/gasService";
+} from "@/constants";
 import {
   Customer,
-  District,
   MealType,
   MenuItem,
   Order,
   UserChoosePackage,
-  Weekday,
-} from "@/src/types";
+  Weekday
+} from "@/types";
 import { useEffect, useMemo, useState } from "react";
 import { orderService } from "../services";
 
@@ -74,18 +72,8 @@ export function useAppState() {
   useEffect(() => {
     const init = async () => {
       try {
-        const [data, ordersData, analyticsData] = await Promise.all([
-          gasService.fetchData(),
-          gasService.fetchOrders(),
-          gasService.fetchAnalytics(),
-        ]);
-
         const mockExtendedMenu: MenuItem[] = MOCK_MEAL_DATA;
-
         setMenu(mockExtendedMenu);
-        setAllCustomers(data.customers || []);
-        setOrders(ordersData);
-        setAnalytics(analyticsData);
       } catch (err) {
         console.error("Init error:", err);
       }
