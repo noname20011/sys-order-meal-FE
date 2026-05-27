@@ -21,20 +21,20 @@ export const MEAL_COUNTS = [
 
 export const USER_CHOOSE_PACKAGE: UserChoosePackage[] = [
   { idWeek: "week", idDay: "5-days", idMeal: "1-meal", price: 280000},
-  { idWeek: "week", idDay: "5-days", idMeal: "2-meals", price: 450000},
-  { idWeek: "week", idDay: "5-days", idMeal: "3-meals", price: 650000},
+  { idWeek: "week", idDay: "5-days", idMeal: "2-meals", price: 510000},
+  { idWeek: "week", idDay: "5-days", idMeal: "3-meals", price: 790000},
 
   { idWeek: "week", idDay: "6-days", idMeal: "1-meal", price: 300000},
-  { idWeek: "week", idDay: "6-days", idMeal: "2-meals", price: 480000},
-  { idWeek: "week", idDay: "6-days", idMeal: "3-meals", price: 700000},
+  { idWeek: "week", idDay: "6-days", idMeal: "2-meals", price: 550000},
+  { idWeek: "week", idDay: "6-days", idMeal: "3-meals", price: 840000},
 
-  { idWeek: "month", idDay: "5-days", idMeal: "1-meal", price: 950000},
-  { idWeek: "month", idDay: "5-days", idMeal: "2-meals", price: 1600000},
-  { idWeek: "month", idDay: "5-days", idMeal: "3-meals", price: 2300000},
+  { idWeek: "month", idDay: "5-days", idMeal: "1-meal", price: 1050000},
+  { idWeek: "month", idDay: "5-days", idMeal: "2-meals", price: 1900000},
+  { idWeek: "month", idDay: "5-days", idMeal: "3-meals", price: 3100000},
 
-  { idWeek: "month", idDay: "6-days", idMeal: "1-meal", price: 1000000},
-  { idWeek: "month", idDay: "6-days", idMeal: "2-meals", price: 1750000},
-  { idWeek: "month", idDay: "6-days", idMeal: "3-meals", price: 2500000},
+  { idWeek: "month", idDay: "6-days", idMeal: "1-meal", price: 1150000},
+  { idWeek: "month", idDay: "6-days", idMeal: "2-meals", price: 2100000},
+  { idWeek: "month", idDay: "6-days", idMeal: "3-meals", price: 3300000},
 ]
 
 export const AVG_MEAL_PRICE = 50000;
@@ -74,32 +74,32 @@ export const MENU_COORDINATES = [
 ];
 
 export const DISTRICT_FEES = [
-  { id: "q_1", name: "Quận 1" },
-  { id: "q_2", name: "Quận 2" },
-  { id: "q_3", name: "Quận 3" },
-  { id: "q_4", name: "Quận 4" },
-  { id: "q_5", name: "Quận 5" },
-  { id: "q_6", name: "Quận 6" },
-  { id: "q_7", name: "Quận 7" },
-  { id: "q_8", name: "Quận 8" },
-  { id: "q_10", name: "Quận 10" },
-  { id: "q_11", name: "Quận 11" },
-  { id: "q_12", name: "Quận 12" },
+  { id: "Quận 1", name: "Quận 1" },
+  { id: "Quận 2", name: "Quận 2" },
+  { id: "Quận 3", name: "Quận 3" },
+  { id: "Quận 4", name: "Quận 4" },
+  { id: "Quận 5", name: "Quận 5" },
+  { id: "Quận 6", name: "Quận 6" },
+  { id: "Quận 7", name: "Quận 7" },
+  { id: "Quận 8", name: "Quận 8" },
+  { id: "Quận 10", name: "Quận 10" },
+  { id: "Quận 11", name: "Quận 11" },
+  { id: "Quận 12", name: "Quận 12" },
 
-  { id: "q_tb", name: "Quận Tân Bình" },
-  { id: "q_tp", name: "Quận Tân Phú" },
-  { id: "q_bt", name: "Quận Bình Thạnh" },
-  { id: "q_pn", name: "Quận Phú Nhuận" },
-  { id: "q_gv", name: "Quận Gò Vấp" },
-  { id: "q_btan", name: "Quận Bình Tân" },
+  { id: "Q.Tân Bình", name: "Q.Tân Bình" },
+  { id: "Q.Tân Phú", name: "Q.Tân Phú" },
+  { id: "Q.Bình Thạnh", name: "Q.Bình Thạnh" },
+  { id: "Q.Phú Nhuận", name: "Q.Phú Nhuận" },
+  { id: "Q.Gò Vấp", name: "Q.Gò Vấp" },
+  { id: "Q.Bình Tân", name: "Q.Bình Tân" },
 
-  { id: "tp_td", name: "TP Thủ Đức" },
+  { id: "TP Thủ Đức", name: "TP Thủ Đức" },
 
-  { id: "h_bc", name: "Huyện Bình Chánh" },
-  { id: "h_cc", name: "Huyện Củ Chi" },
-  { id: "h_hm", name: "Huyện Hóc Môn" },
-  { id: "h_nb", name: "Huyện Nhà Bè" },
-  { id: "h_cg", name: "Huyện Cần Giờ" },
+  { id: "H.Bình Chánh", name: "H.Bình Chánh" },
+  { id: "H.Củ Chi", name: "H.Củ Chi" },
+  { id: "H.Hóc Môn", name: "H.Hóc Môn" },
+  { id: "H.Nhà Bè", name: "H.Nhà Bè" },
+  { id: "H.Cần Giờ", name: "H.Cần Giờ" },
 ];
 
 export const MOCK_MEAL_DATA: MenuItem[] = [
