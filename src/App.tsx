@@ -144,46 +144,7 @@ export default function App() {
   const renderAdminFlow = () => (
     <div key="admin-flow" className="space-y-16">
       <div className="flex justify-center gap-6 mb-16">
-        <button
-          onClick={() => setCurrentPage(6)}
-          className={cn(
-            "px-10 py-5 rounded-sm border-2 font-serif italic text-xl uppercase tracking-tight flex items-center gap-3 transition-all",
-            currentPage === 6
-              ? "bg-brand-green text-black border-brand-green neon-glow"
-              : "bg-white/5 text-white/40 border-white/10 hover:border-brand-green/50",
-          )}
-        >
-          <BarChart3 className="w-6 h-6" /> ANALYTICS
-        </button>
-        <button
-          onClick={() => setCurrentPage(7)}
-          className={cn(
-            "px-10 py-5 rounded-sm border-2 font-serif italic text-xl uppercase tracking-tight flex items-center gap-3 transition-all",
-            currentPage === 7
-              ? "bg-brand-orange text-black border-brand-orange shadow-md neon-glow-orange"
-              : "bg-white/5 text-white/40 border-white/10 hover:border-brand-orange/50",
-          )}
-        >
-          <Truck className="w-6 h-6" /> LOGISTICS
-        </button>
       </div>
-      {currentPage === 6 && <Analytics analytics={analytics} />}
-      {currentPage === 7 && <Operations orders={orders} />}
-      {![6, 7].includes(currentPage) && (
-        <div className="text-center p-24 bg-white/5 border border-white/10 rounded-sm relative overflow-hidden">
-          <div className="absolute inset-0 bg-brand-green/2 grid-pattern opacity-5 pointer-events-none" />
-          <LayoutDashboard className="w-20 h-20 text-white/5 mx-auto mb-6" />
-          <p className="text-white/30 font-black italic uppercase tracking-[0.4em] text-xs">
-            SELECT OPERATIONAL MODULE ABOVE
-          </p>
-          <button
-            onClick={() => setCurrentPage(6)}
-            className="mt-12 px-12 py-5 rounded-sm bg-brand-green text-black font-black font-serif italic uppercase tracking-tight text-xl neon-glow active:scale-95 transition-all"
-          >
-            COMMAND CENTER
-          </button>
-        </div>
-      )}
     </div>
   );
 
