@@ -46,13 +46,13 @@ export const Layout = ({
     )}
 
     <nav className="fixed top-0 left-0 w-full h-16 md:h-20 bg-white/80 backdrop-blur-xl z-50 border-b border-brand-gray-100 flex items-center justify-between px-4 md:px-12 print:hidden shadow-sm">
-      <div className="flex items-center gap-2 py-1">
+      <a href="/" className="flex items-center gap-2 py-1">
         <img
           src="/assets/logo.png"
           alt="Logo"
           className="h-auto w-9/12 md:w-11/12"
         />
-      </div>
+      </a>
 
       <div className="flex gap-1 bg-brand-gray-100 p-1.5 rounded-full shrink-0">
         <button
