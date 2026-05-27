@@ -80,7 +80,7 @@ export const PaymentStep = ({
                 Chủ tài khoản: NGUYỄN HÙNG HẢI
               </p>
               <p className="text-brand-orange font-bold text-lg font-mono tracking-wider">
-                1999 0917 999 - MBBANK
+                107875885089 - VIETINBANK
               </p>
             </div>
           </div>

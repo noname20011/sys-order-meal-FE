@@ -169,7 +169,7 @@ export const CheckoutForm = ({
             value={note}
             onChange={(e) => setNote(e.target.value)}
             className="input-field h-22 resize-none"
-            placeholder="Bạn muốn giao mấy giờ, không ăn được gì..."
+            placeholder="Bạn không ăn được gì..."
           />
         </div>
 
