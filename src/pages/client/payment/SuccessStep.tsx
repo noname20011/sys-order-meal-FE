@@ -146,6 +146,14 @@ export const SuccessStep = ({
           <div className="p-8 md:p-10 space-y-8">
             {/* Center-aligned Bank-Style Success Header inside the Receipt */}
             <div className="flex flex-col items-center text-center pb-2 border-b-2 border-brand-gray-100 border-dashed relative">
+              <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-[#0068ff]/5 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="flex flex-col items-center text-center relative z-10">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange font-bold uppercase tracking-wider mb-3 text-lg">
+                  <Camera className="w-3.5 h-3.5 animate-pulse" />
+                  <span>Chụp ảnh hóa đơn & gửi Zalo</span>
+                </div>
+              </div>
               {/* Pulsing Success Badge */}
               <div className="relative mb-4">
                 <span className="absolute -inset-2 rounded-full bg-emerald-100/60" />
@@ -160,7 +168,6 @@ export const SuccessStep = ({
 
             {/* List of Details with Beautiful Label/Values */}
             <div className="space-y-5">
-
               {/* Created Time */}
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
@@ -259,26 +266,26 @@ export const SuccessStep = ({
               <div className="h-px bg-brand-gray-100" />
 
               {/* Ship Fee */}
-              {/* <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-brand-gray-50 flex items-center justify-center text-brand-gray-900/40 opacity-80">
                     <ShoppingBag className="w-4 h-4" />
                   </div>
                   <span className="text-sm font-semibold text-brand-gray-900/60">
-                    Gói bữa ăn
+                    Gói bữa ăn (Tổng)
                   </span>
                 </div>
                 <span className="text-sm font-bold text-brand-black">
                   {displayPackagePrice.toLocaleString("vi-VN")}₫
                 </span>
-              </div> */}
+              </div>
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-brand-gray-50 flex items-center justify-center text-brand-gray-900/40 opacity-80">
                     <Truck className="w-4 h-4" />
                   </div>
                   <span className="text-sm font-semibold text-brand-gray-900/60">
-                    Phí giao hàng
+                    Phí giao hàng (Tổng)
                   </span>
                 </div>
                 <span className="text-sm font-bold text-brand-black">
@@ -325,36 +332,29 @@ export const SuccessStep = ({
 
         {/* Tip: Please take a Screenshot of this receipt */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="mt-6 p-1 flex items-center justify-center gap-3 text-center fixed left-1/2 -translate-x-1/2 w-8/12 mx-auto bottom-[16%] animate-pulse"
-        >
-          <Camera className="w-5 h-5 text-brand-orange shrink-0 animate-pulse" />
-          <p className="text-[14px] font-bold text-brand-orange/90 leading-relaxed tracking-wider">
-            Chụp ảnh hóa đơn và gửi vào Zalo
-          </p>
-          <ArrowRight className="w-10 h-10 text-brand-orange" />
-        </motion.div>
-
-        {/* Action Buttons to navigate back / Reset */}
-        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45 }}
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           {/* Fixed Sticky Footer Navigation for Meal Selection */}
-          <Button
-            isHasBackButton={false}
-            text="Đặt đơn hàng mới"
+          <a
+            href="https://zalo.me/0832969773" 
+            target="_blank"
             onClick={() => {
               setCurrentPage(1);
               setOrderSuccessId(null);
-              navigate("/");
             }}
-            className="w-full sm:w-auto px-10 py-5 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center gap-3 shadow-xl shadow-brand-orange/20 hover:scale-[1.02] active:scale-95 transition-all text-sm uppercase tracking-wider"
-          ></Button>
+            className="fixed bottom-4 left-0 right-0 w-11/12 md:w-8/12 mx-auto px-4 py-3 rounded-full bg-[#0068ff] text-white flex items-center justify-center gap-3 shadow-xl shadow-brand-orange/20 hover:scale-[1.02] active:scale-95 transition-all text-md uppercase tracking-wider md:text-xl font-semibold"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+              className="w-10 h-10"
+              alt="Zalo"
+            />
+
+            <span>Gửi bill qua Zalo</span>
+          </a>
         </motion.div>
       </div>
     </PageWrapper>

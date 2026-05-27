@@ -10,6 +10,7 @@ interface ButtonProps {
   disableBackBtn?: boolean;
   handleBack?: () => void;
   children?: React.ReactNode;
+  icon?: React.ReactNode;
 }
 
 const Button = (props: ButtonProps) => {
@@ -22,6 +23,7 @@ const Button = (props: ButtonProps) => {
     disableBackBtn = false,
     disableMainBtn = false,
     children,
+    icon
   } = props;
 
   return (
@@ -42,7 +44,7 @@ const Button = (props: ButtonProps) => {
           disabled={disableMainBtn}
         >
           {text}
-          <ArrowRight className="w-6 h-6" />
+          {icon ? icon : <ArrowRight className="w-6 h-6" />}
         </button>
       </div>
       {children}

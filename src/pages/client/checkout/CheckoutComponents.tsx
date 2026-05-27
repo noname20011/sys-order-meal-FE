@@ -191,7 +191,7 @@ export const CheckoutForm = ({
                 Chuyển khoản
               </span>
             </button>
-            <button
+            {/* <button
               onClick={() => setPaymentMethod("cod")}
               className={cn(
                 "p-2 rounded-3xl border-2 flex flex-col items-center gap-3 transition-all",
@@ -204,7 +204,7 @@ export const CheckoutForm = ({
               <span className="font-bold text-xs uppercase tracking-widest">
                 Thanh toán khi nhận hàng
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -277,8 +277,7 @@ export const Step3Information = ({
             customerData.phone &&
             customerData.address &&
             customerData.district &&
-            customerData.timeReceive &&
-            note !== ""
+            customerData.timeReceive
           )
             onNext();
           else setIsAlert(true);
