@@ -339,7 +339,7 @@ export const SuccessStep = ({
         >
           {/* Fixed Sticky Footer Navigation for Meal Selection */}
           <a
-            href="https://zalo.me/0832969773" 
+            href="https://zalo.me/0938582015" 
             target="_blank"
             onClick={() => {
               setCurrentPage(1);

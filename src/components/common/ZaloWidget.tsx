@@ -11,7 +11,7 @@ export const ZaloWidget = () => (
       <Facebook className="w-6 h-6 text-white" />
     </motion.button> */}
     <motion.a 
-      href="https://zalo.me/0832969773" 
+      href="https://zalo.me/0938582015" 
       target="_blank"
       whileHover={{ scale: 1.1 }}
       className="w-14 h-14 bg-[#0068ff] rounded-full shadow-2xl flex items-center justify-center"
