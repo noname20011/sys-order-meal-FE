@@ -74,7 +74,7 @@ export const CheckoutForm = ({
   }, [data]);
 
   return (
-    <div className="p-2 md:p-12 rounded-xl md:rounded-[2.5rem] space-y-10 card-shadow border border-brand-gray-100 font-sans text-left relative overflow-hidden">
+    <div className="p-2 md:p-6 rounded-xl md:rounded-[2.5rem] space-y-10 card-shadow border border-brand-gray-100 font-sans text-left relative overflow-hidden">
       <div className="grid md:grid-cols-2 gap-4 relative z-10">
         <Input
           icon={<Phone size={18} className="text-brand-orange" />}

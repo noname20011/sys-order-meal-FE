@@ -68,6 +68,13 @@ export default function App() {
     }
   }, [orderSuccessId, navigate]);
 
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [currentPage]);
+
   const renderCustomerFlow = () => (
     <div key="customer-flow">
       <StepIndicator currentStep={currentPage} />
