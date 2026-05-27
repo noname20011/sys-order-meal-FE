@@ -81,7 +81,7 @@ export const MealSelection = ({
           </div>
 
           {/* Legend */}
-          <div className="p-2 bg-brand-gray-50 border border-brand-gray-100 rounded-4xl flex items-center justify-center gap-8 text-xs font-bold md:w-3/12">
+          <div className="p-2 bg-brand-gray-50 border border-brand-gray-100 rounded-4xl hidden md:flex items-center justify-center gap-8 text-xs font-bold md:w-3/12">
             <div className="flex items-center gap-2 text-brand-gray-900/40">
               <div className="w-4 h-4 rounded border-2 border-brand-gray-100" />{" "}
               Trống

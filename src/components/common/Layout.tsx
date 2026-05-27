@@ -23,15 +23,15 @@ export const Layout = ({
   onTabChange: (tab: "customer" | "admin") => void;
   children: React.ReactNode;
 }) => (
-  <div className="min-h-screen bg-brand-gray-50 relative font-sans text-brand-black overflow-hidden">
+  <div className="min-h-screen bg-brand-gray-50 relative font-sans text-brand-black">
     {/* Underlay Premium Hand-Picked Appetite-Inducing Food Graphic */}
     {activeTab === "customer" && (
       <>
         {/* Soft high-key gourmet background photo (delicious fresh salad ingredients) */}
         <div
-          className="absolute inset-0 md:bg-contain bg-cover bg-center bg-no-repeat pointer-events-none transition-all duration-1000 select-none"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none transition-all duration-1000 select-none"
           style={{
-            backgroundImage: `url('https://img.magnific.com/premium-photo/healthy-vegetarian-food-concept-quinoa-with-vegetables-seeds-herbs-white-wooden-background-top-view-copy-space_254005-838.jpg')`,
+            backgroundImage: `url('/assets/bg.svg')`,
           }}
         />
         {/* Radial vignette fade to keep center content ultra-legible & high contrast on any monitor/screen */}

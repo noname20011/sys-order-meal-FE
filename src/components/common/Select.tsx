@@ -43,7 +43,7 @@ const Select = <T extends SelectItem>({
     <div className="space-y-2">
       <label className="ml-1 text-sm font-bold text-brand-gray-900/60">{label}</label>
 
-      <div className="relative">
+      <div className="relative bg-white rounded-xl">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}

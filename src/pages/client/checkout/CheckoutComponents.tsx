@@ -6,6 +6,7 @@ import InputNumber from "@/components/common/InputNumber";
 import InputTime from "@/components/common/InputTime";
 import InputTimeAutoFill from "@/components/common/InputTimeAutoFill";
 import Select from "@/components/common/Select";
+import TextArea from "@/components/common/TextErea";
 import { TIME_DELIVERY, USER_CHOOSE_PACKAGE } from "@/constants";
 import { useFetchData } from "@/hooks/useBaseQuery";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -73,7 +74,7 @@ export const CheckoutForm = ({
   }, [data]);
 
   return (
-    <div className="bg-white p-8 md:p-12 rounded-[2.5rem] space-y-10 card-shadow border border-brand-gray-100 font-sans text-left relative overflow-hidden">
+    <div className="p-2 md:p-6 rounded-xl md:rounded-[2.5rem] space-y-10 card-shadow border border-brand-gray-100 font-sans text-left relative overflow-hidden">
       <div className="grid md:grid-cols-2 gap-4 relative z-10">
         <Input
           icon={<Phone size={18} className="text-brand-orange" />}
@@ -109,7 +110,7 @@ export const CheckoutForm = ({
             heightOption="max-h-72"
           />
         </div>
-        <Input
+        <TextArea
           icon={<MapPin size={18} className="text-brand-orange" />}
           placeholder="Số nhà, hẻm, đường..."
           value={customerData.address}
@@ -148,7 +149,7 @@ export const CheckoutForm = ({
           onChange={(value) =>
             setCustomerData({ ...customerData, startDate: value })
           }
-          label="*Phí ship (cho 1 ngày)"
+          label="*Ngày bắt đầu"
         />
         <InputTimeAutoFill
           placeholder="Phí ship"
@@ -180,7 +181,7 @@ export const CheckoutForm = ({
             <button
               onClick={() => setPaymentMethod("transfer")}
               className={cn(
-                "p-2 rounded-3xl border-2 flex flex-col items-center gap-3 transition-all",
+                "p-2 rounded-xl border-2 flex flex-col items-center gap-3 transition-all",
                 paymentMethod === "transfer"
                   ? "border-brand-orange bg-brand-orange-light text-brand-orange"
                   : "border-brand-gray-100 bg-brand-gray-50 text-brand-gray-900/40 hover:border-brand-orange/30",
@@ -365,7 +366,7 @@ export const PriceBreakdown = ({
         </div>
         <div className="flex justify-between items-center pt-4">
           <span className="text-lg font-bold text-brand-gray-900">
-            Tổng thanh toán
+            Tổng:
           </span>
           <span className="text-4xl font-display font-extrabold text-brand-orange">
             {totals.finalTotal.toLocaleString("vi-VN")}₫
