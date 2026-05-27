@@ -1,16 +1,16 @@
-import { ArrowRight, Calendar, Check, Clock, ShoppingBag } from "lucide-react";
+import { UserChoosePackage } from "@/types";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { PageWrapper } from "@/components/common/Layout";
 import {
   AVG_MEAL_PRICE,
   DURATIONS,
   MEAL_COUNTS,
   TIMEFRAMES,
   USER_CHOOSE_PACKAGE,
-} from "../../../constants";
-import { cn } from "../../../lib/utils";
-import { PageWrapper } from "../../../components/common/Layout";
-import { UserChoosePackage } from "@/src/types";
+} from "@/constants";
+import { cn } from "@/lib/utils";
 
 interface SelectionWizardProps {
   userChoosePackage: UserChoosePackage;
@@ -56,9 +56,6 @@ export const SelectionWizard = ({
     if (wizardStep < step.step) setWizardStep(wizardStep + 1);
   };
 
-  const calculatePrice = (mealsPerDay: number) => {
-    return mealsPerDay * selectedPlan * weeksCount * AVG_MEAL_PRICE;
-  };
 
   useEffect(() => {
     if (
@@ -73,7 +70,7 @@ export const SelectionWizard = ({
   return (
     <PageWrapper>
       <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-sans font-extrabold text-brand-black tracking-tight mb-4">
             Chọn Gói
           </h2>
@@ -82,25 +79,6 @@ export const SelectionWizard = ({
           </p>
         </div>
 
-        {/* Internal Sub-step Indicator (Mini version) */}
-        <div className="max-w-xl mx-auto mb-8 px-4 flex justify-center gap-2">
-          {[1, 2, 3].map((s) => (
-            <div
-              key={s}
-              className={cn(
-                "h-1 relative flex-1 rounded-full overflow-hidden transition-all duration-500",
-                wizardStep >= s ? "bg-brand-orange/20" : "bg-brand-gray-100",
-              )}
-            >
-              {wizardStep === s && (
-                <motion.div
-                  layoutId="wizard-sub-active"
-                  className="absolute inset-0 bg-brand-orange"
-                />
-              )}
-            </div>
-          ))}
-        </div>
         <AnimatePresence mode="wait">
           <motion.div
             key="step-1"

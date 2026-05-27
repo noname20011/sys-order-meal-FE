@@ -14,6 +14,7 @@ import {
 } from "@/types";
 import { useEffect, useMemo, useState } from "react";
 import { orderService } from "../services";
+import { AxiosError } from "axios";
 
 export function useAppState() {
   const [activeTab, setActiveTab] = useState<"customer" | "admin">("customer");
@@ -246,7 +247,10 @@ export function useAppState() {
         setOrderSuccessId(result?.data?.id);
       }
     } catch (err) {
-      showAlert("Lỗi hệ thống! Vui lòng thử lại sau.");
+      const error = err as AxiosError<{ message: string }>;
+      const message =
+      error.response?.data?.message || "Lỗi hệ thống!";
+      showAlert(message);
     } finally {
       setIsSubmitting(false);
     }

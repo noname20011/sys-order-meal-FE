@@ -210,21 +210,18 @@ export default function App() {
       <Route
         path="/invoice/:orderId"
         element={
-          <>
-            <SuccessStep
-              orderId={orderSuccessId || ""}
-              fullName={customerData.fullName}
-              mealPackage={`${weeksCount} tuần - ${selectedPlan} ngày - ${selectedMealCount} bữa/ngày`}
-              phoneNumber={customerData.phone}
-              shipFee={totals.shipTotal}
-              totalPrice={totals.finalTotal}
-              paymentMethod={paymentMethod}
-              setOrderSuccessId={setOrderSuccessId}
-              setCurrentPage={setCurrentPage}
-              userChoosePackage={userChoosePackage}
-            />
-            <ZaloWidget />
-          </>
+          <SuccessStep
+            orderId={orderSuccessId || ""}
+            fullName={customerData.fullName}
+            mealPackage={`${weeksCount} tuần - ${selectedPlan} ngày - ${selectedMealCount} bữa/ngày`}
+            phoneNumber={customerData.phone}
+            shipFee={totals.shipTotal}
+            totalPrice={totals.finalTotal}
+            paymentMethod={paymentMethod}
+            setOrderSuccessId={setOrderSuccessId}
+            setCurrentPage={setCurrentPage}
+            userChoosePackage={userChoosePackage}
+          />
         }
       />
     </Routes>
