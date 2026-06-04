@@ -238,7 +238,7 @@ export const Step3Information = ({
   );
 
   return (
-    <div className="max-w-6xl mx-auto px-4 pb-32">
+    <div className="max-w-6xl mx-auto md:px-4 pb-32">
       <Header
         title="Thông tin đơn hàng"
         subtitle="Vui lòng cung cấp thông tin để chúng tôi phục vụ bạn tốt nhất"
@@ -329,6 +329,9 @@ export const PriceBreakdown = ({
             <p className="text-sm font-medium text-brand-black">
               {selectedPlan} ngày × {selectedMealCount} bữa × {weeksCount} tuần
             </p>
+            <p className="text-brand-orange mt-2 text-xs font-bold uppercase tracking-widest mb-1">
+              Số lượng gói: <strong> {userChoosePackage.quantity} </strong>
+            </p>
           </div>
           <span className="font-bold text-lg text-brand-black">
             {(
@@ -369,7 +372,7 @@ export const PriceBreakdown = ({
             Tổng:
           </span>
           <span className="text-4xl font-display font-extrabold text-brand-orange">
-            {totals.finalTotal.toLocaleString("vi-VN")}₫
+            {!!totals.finalTotal ? totals.finalTotal.toLocaleString("vi-VN") : 0}₫
           </span>
         </div>
       </div>

@@ -24,7 +24,7 @@ export function useAppState() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [analytics, setAnalytics] = useState<any>(null);
   const [userChoosePackage, setUserChoosePackage] = useState<UserChoosePackage>(
-    { idWeek: "", idDay: "", idMeal: "" } as UserChoosePackage,
+    { idWeek: "", idDay: "", idMeal: "", quantity: 1 } as UserChoosePackage,
   );
 
   // Selection State
@@ -96,8 +96,8 @@ export function useAppState() {
     const currentQty = selectedMeals[key] || 0;
     const dayTotal = getDayTotalQty(day);
 
-    if (dayTotal >= selectedMealCount) {
-      showAlert(`Ngày ${day} đã chọn đủ tối đa ${selectedMealCount} bữa!`);
+    if (dayTotal >= selectedMealCount * userChoosePackage.quantity) {
+      showAlert(`Ngày ${day} đã chọn đủ tối đa ${selectedMealCount * userChoosePackage.quantity} bữa!`);
       return;
     }
 
@@ -165,7 +165,7 @@ export function useAppState() {
     return {
       foodTotal: pricePackageChosen,
       shipTotal,
-      finalTotal: pricePackageChosen?.price + shipTotal,
+      finalTotal: pricePackageChosen?.price * userChoosePackage.quantity + shipTotal,
     };
   }, [
     selectedMeals,
@@ -174,6 +174,7 @@ export function useAppState() {
     customerData.district,
     customerData.feeShip,
     selectedPlan,
+    userChoosePackage.quantity,
   ]);
 
   const handleSubmitOrder = async () => {
@@ -233,7 +234,7 @@ export function useAppState() {
       formDataObj.append("totalPrice", totals.finalTotal.toString());
       formDataObj.append(
         "mealPackage",
-        `${weeksCount} tuần - ${selectedPlan} ngày - ${selectedMealCount} bữa/ngày`,
+        `${weeksCount} tuần - ${selectedPlan} ngày - ${selectedMealCount} bữa/ngày x ${userChoosePackage.quantity}`,
       );
       formDataObj.append("metadataOrder", JSON.stringify(metaDataMeal));
       formDataObj.append("note", note);
