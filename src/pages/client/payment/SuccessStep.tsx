@@ -70,7 +70,7 @@ export const SuccessStep = ({
           pack.idDay === userChoosePackage.idDay &&
           pack.idWeek === userChoosePackage.idWeek,
       ) as UserChoosePackage
-    )?.price?.toLocaleString("vi-NV") || 0;
+    )?.price || 0;
   const displayTotalPrice =
     totalPrice !== undefined ? totalPrice : localOrder?.totalPrice || 0;
   const displayPaymentMethod =
@@ -149,7 +149,7 @@ export const SuccessStep = ({
               <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-[#0068ff]/5 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex flex-col items-center text-center relative z-10">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange font-bold uppercase tracking-wider mb-3 text-lg">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange font-bold uppercase tracking-wider mb-3 md:text-lg text-sm">
                   <Camera className="w-3.5 h-3.5 animate-pulse" />
                   <span>Chụp ảnh hóa đơn & gửi Zalo</span>
                 </div>
@@ -238,7 +238,7 @@ export const SuccessStep = ({
                   </span>
                 </div>
                 <span className="text-sm font-bold text-brand-black text-right max-w-60 leading-snug">
-                  {displayMealPackage}
+                  {displayMealPackage} x {userChoosePackage.quantity} 
                 </span>
               </div>
 
@@ -276,7 +276,7 @@ export const SuccessStep = ({
                   </span>
                 </div>
                 <span className="text-sm font-bold text-brand-black">
-                  {displayPackagePrice.toLocaleString("vi-VN")}₫
+                  {(displayPackagePrice * userChoosePackage.quantity).toLocaleString("vi-VN")}₫
                 </span>
               </div>
               <div className="flex justify-between items-center">

@@ -29,10 +29,7 @@ export const Layout = ({
       <>
         {/* Soft high-key gourmet background photo (delicious fresh salad ingredients) */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none transition-all duration-1000 select-none"
-          style={{
-            backgroundImage: `url('/assets/bg.svg')`,
-          }}
+          className="fixed inset-0 md:bg-cover bg-center bg-no-repeat pointer-events-none transition-all duration-1000 select-none md:bg-[url('/assets/bg.svg')] bg-[url('https://res.cloudinary.com/dst8bybiw/image/upload/v1780536497/bg3_cpo7wf.jpg')]"
         />
         {/* Radial vignette fade to keep center content ultra-legible & high contrast on any monitor/screen */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.3)_0%,rgba(249,250,251,0.95)_100%)] pointer-events-none select-none" />

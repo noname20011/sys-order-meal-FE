@@ -16,6 +16,7 @@ interface MealSelectionProps {
   selectedPlan: number;
   selectedWeek: number;
   selectedMealCount: number;
+  packageQuantity: number;
   onBack: () => void;
   onNext: () => void;
 }
@@ -29,9 +30,12 @@ export const MealSelection = ({
   selectedWeek,
   selectedPlan,
   selectedMealCount,
+  packageQuantity,
   onBack,
   onNext,
 }: MealSelectionProps) => {
+
+  const effectiveMealCount = selectedMealCount * packageQuantity;
 
   const getDaySelectionCount = (day: Weekday) => {
     return Object.entries(selectedMeals)
@@ -40,17 +44,17 @@ export const MealSelection = ({
   };
 
   const isDayFullySelected = (day: Weekday) => {
-    return getDaySelectionCount(day) >= selectedMealCount;
+    return getDaySelectionCount(day) >= effectiveMealCount;
   };
 
   const selectedCount = Object.values(selectedMeals).reduce((sum, qty) => sum + qty, 0);
-  const totalRequired = selectedPlan * selectedMealCount;
+  const totalRequired = selectedPlan * effectiveMealCount;
 
   return (
     <PageWrapper>
       <Header
         title="Chọn bữa ăn"
-        subtitle={`Gói ${selectedWeek} tuần x ${selectedPlan} ngày × ${selectedMealCount} món/ngày.`}
+        subtitle={`Gói ${selectedWeek} tuần x ${selectedPlan} ngày × ${effectiveMealCount} món/ngày.`}
       />
 
       <div className="max-w-5xl mx-auto px-4 pb-10">
@@ -63,7 +67,7 @@ export const MealSelection = ({
               </div>
               <div>
                 <h3 className="text-md font-display font-semibold text-brand-black tracking-tight">
-                  {`${selectedPlan} ngày × ${selectedMealCount} món/ngày.`}
+                  {`${selectedPlan} ngày × ${effectiveMealCount} món/ngày.`}
                 </h3>
                 <p className="text-brand-gray-900/40 font-bold uppercase tracking-widest text-[10px]">
                   {selectedCount} trên {totalRequired} món được chọn
@@ -171,7 +175,7 @@ export const MealSelection = ({
                 >
                   <img
                     src={meal.image}
-                    className="w-auto h-14 md:h-36 object-cover mb-0.5 md:mb-1"
+                    className="w-auto h-14 md:h-33 object-cover mb-0.5 md:mb-1"
                     alt="dish"
                   />
                   <p className="absolute top-[12%] right-[2%] xs:right-[5%] md:right-[12%] font-meal text-[8px] sm:text-xl text-brand-black h-fit max-w-8 sm:max-w-16 sm:leading-tight sm:tracking-wider font-light">

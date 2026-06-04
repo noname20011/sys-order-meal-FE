@@ -11,6 +11,7 @@ import {
   USER_CHOOSE_PACKAGE,
 } from "@/constants";
 import { cn } from "@/lib/utils";
+import QuantityPopup from "./QuantityPopup";
 
 interface SelectionWizardProps {
   userChoosePackage: UserChoosePackage;
@@ -45,6 +46,8 @@ export const SelectionWizard = ({
   resetMeals,
 }: SelectionWizardProps) => {
   const [wizardStep, setWizardStep] = useState(0);
+  const [isQuantityPopupOpen, setIsQuantityPopupOpen] =
+    useState<boolean>(false);
 
   const stepIndicatorTimeFrame: StepIndicatorTimeFrame[] = [
     { step: 1, label: "Tháng / Tuần" },
@@ -55,7 +58,6 @@ export const SelectionWizard = ({
   const handleNextStep = (step: StepIndicatorTimeFrame) => {
     if (wizardStep < step.step) setWizardStep(wizardStep + 1);
   };
-
 
   useEffect(() => {
     if (
@@ -305,18 +307,30 @@ export const SelectionWizard = ({
       </div>
 
       {/* Fixed Sticky Footer Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 pb-6 px-3 bg-white/80 backdrop-blur-xl border-t border-brand-gray-100 z-50">
-        <div className="max-w-4xl mx-auto flex items-center gap-4">
-          <button
-            onClick={() => wizardStep === 3 && onNext()}
-            className={`flex-2 py-3 rounded-full ${wizardStep === 3 ? "bg-brand-orange text-white hover:scale-[1.02] active:scale-95 transition-all cursor-pointer" : "bg-[#e5e7eb] text-[#9ca3af] border-[solid_1px_#d1d5db] cursor-not-allowed opacity-70"} font-bold flex items-center justify-center gap-3 shadow-xl shadow-brand-orange/20 text-lg`}
-            disabled={wizardStep < 3}
-          >
-            {wizardStep === 3 ? "Tiếp theo" : "Chọn gói"}
-            <ArrowRight className="w-6 h-6" />
-          </button>
+      {!isQuantityPopupOpen && (
+        <div className="fixed bottom-0 left-0 right-0 pb-6 px-3 bg-white/80 backdrop-blur-xl border-t border-brand-gray-100 z-50">
+          <div className="max-w-4xl mx-auto flex items-center gap-4">
+            <button
+              onClick={() => setIsQuantityPopupOpen(true)}
+              className={`flex-2 py-3 rounded-full ${wizardStep === 3 ? "bg-brand-orange text-white hover:scale-[1.02] active:scale-95 transition-all cursor-pointer" : "bg-[#e5e7eb] text-[#9ca3af] border-[solid_1px_#d1d5db] cursor-not-allowed opacity-70"} font-bold flex items-center justify-center gap-3 shadow-xl shadow-brand-orange/20 text-lg`}
+              disabled={wizardStep < 3}
+            >
+              {wizardStep === 3 ? "Tiếp theo" : "Chọn gói"}
+              <ArrowRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
-      </div>
+      )}
+
+      {isQuantityPopupOpen && (
+        <QuantityPopup
+          setIsQuantityPopupOpen={setIsQuantityPopupOpen}
+          packageQuantity={userChoosePackage.quantity}
+          setUserChoosePackage={setUserChoosePackage}
+          selectedMealCount={selectedMealCount}
+          onNext={onNext}
+        />
+      )}
     </PageWrapper>
   );
 };

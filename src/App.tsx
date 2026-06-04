@@ -1,22 +1,18 @@
-import { Analytics } from "@/pages/admin/Analytics";
-import { Operations } from "@/pages/admin/Operations";
 import { Step3Information } from "@/pages/client/checkout/CheckoutComponents";
 import { MealSelection } from "@/pages/client/menu/MealSelection";
-import { BarChart3, LayoutDashboard, Truck } from "lucide-react";
 import { AnimatePresence } from "motion/react";
+import { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { GlassAlert } from "./components/common/Alert";
 import { Footer } from "./components/common/Footer";
 import { Layout } from "./components/common/Layout";
 import { StepIndicator } from "./components/common/StepIndicator";
 import { ZaloWidget } from "./components/common/ZaloWidget";
+import { DISTRICT_FEES } from "./constants";
 import { useAppState } from "./hooks/useAppState";
-import { cn } from "./lib/utils";
 import { SelectionWizard } from "./pages/client/home/SelectionWizard";
 import { PaymentStep } from "./pages/client/payment/PaymentStep";
 import { SuccessStep } from "./pages/client/payment/SuccessStep";
-import { GlassAlert } from "./components/common/Alert";
-import { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { DISTRICT_FEES } from "./constants";
 
 export default function App() {
   const navigate = useNavigate();
@@ -102,6 +98,7 @@ export default function App() {
           handleMealDecrement={handleMealDecrement}
           selectedPlan={selectedPlan}
           selectedMealCount={selectedMealCount}
+          packageQuantity={userChoosePackage.quantity}
           onBack={() => setCurrentPage(1)}
           onNext={() => setCurrentPage(3)}
         />
