@@ -53,5 +53,5 @@ export interface UserChoosePackage {
   idDay: string;
   idMeal: string;
   price: number;
-  quantity: number;
+  quantity?: number;
 }

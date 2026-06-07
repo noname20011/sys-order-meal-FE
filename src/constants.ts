@@ -130,11 +130,18 @@ export const MOCK_MEAL_DATA: MenuItem[] = [
 
 export const TIME_DELIVERY = [
   { id:"7:00", name: '7:00' },
+  { id:"7:30", name: '7:30' },
   { id:"8:00", name: '8:00' },
+  { id:"8:30", name: '8:30' },
   { id:"9:00", name: '9:00' },
+  { id:"9:30", name: '9:30' },
   { id:"10:00", name: '10:00' },
+  { id:"10:30", name: '10:30' },
   { id:"11:00", name: '11:00' },
+  { id:"11:30", name: '11:30' },
   { id:"12:00", name: '12:00' },
+  { id:"12:30", name: '12:30' },
   { id:"13:00", name: '13:00' },
+  { id:"13:30", name: '13:30' },
   { id:"14:00", name: '14:00' },
 ];
