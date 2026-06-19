@@ -324,7 +324,7 @@ export const PriceBreakdown = ({
 
   const handleApplyCoupon = () => {
 
-    if (couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_NUMBER && couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_PERCENT) {
+    if (couponInput.toUpperCase() !== import.meta.env.VITE_PROMOTE_DISCOUNT_NUMBER && couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_PERCENT) {
       setCustomerData({...customerData, promote: couponInput})
       setMessageErr({success: "", err: 'Mã giảm giá không chính xác'});
     } else {
