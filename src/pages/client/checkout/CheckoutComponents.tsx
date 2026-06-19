@@ -324,7 +324,7 @@ export const PriceBreakdown = ({
 
   const handleApplyCoupon = () => {
 
-    if (couponInput.toUpperCase() !== import.meta.env.VITE_PROMOTE_DISCOUNT_NUMBER && couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_PERCENT) {
+    if (couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_NUMBER && couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_PERCENT) {
       setCustomerData({...customerData, promote: couponInput})
       setMessageErr({success: "", err: 'Mã giảm giá không chính xác'});
     } else {
@@ -395,7 +395,7 @@ export const PriceBreakdown = ({
                 value={couponInput}
                 onChange={(e) => setCouponInput(e.target.value)}
                 placeholder="Nhập mã"
-                className="flex-1 bg-white border border-brand-gray-200 rounded-xl px-4 py-2.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-orange/30 disabled:bg-brand-gray-100 disabled:text-brand-gray-900/40 uppercase tracking-wide placeholder:normal-case placeholder:font-normal placeholder:text-brand-gray-900/30"
+                className="flex-1 bg-white border border-brand-gray-200 rounded-xl px-4 py-2.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-orange/30 disabled:bg-brand-gray-100 disabled:text-brand-gray-900/40 tracking-wide placeholder:normal-case placeholder:font-normal placeholder:text-brand-gray-900/30"
                 />
               <button
                 type="button"
