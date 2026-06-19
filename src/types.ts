@@ -27,6 +27,7 @@ export interface Customer {
   timeReceive: string;
   startDate: string;
   endDate: string;
+  promote?: string;
 }
 
 export interface Order {
