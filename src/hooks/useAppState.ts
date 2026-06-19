@@ -44,6 +44,7 @@ export function useAppState() {
     feeShip: 0,
     startDate: "",
     endDate: "",
+    promote: "",
   });
   const [note, setNote] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<"transfer" | "cod">(
@@ -96,8 +97,8 @@ export function useAppState() {
     const currentQty = selectedMeals[key] || 0;
     const dayTotal = getDayTotalQty(day);
 
-    if (dayTotal >= selectedMealCount * userChoosePackage.quantity) {
-      showAlert(`Ngày ${day} đã chọn đủ tối đa ${selectedMealCount * userChoosePackage.quantity} bữa!`);
+    if (dayTotal >= selectedMealCount * userChoosePackage.quantity!) {
+      showAlert(`Ngày ${day} đã chọn đủ tối đa ${selectedMealCount * userChoosePackage.quantity!} bữa!`);
       return;
     }
 
@@ -159,13 +160,25 @@ export function useAppState() {
         pack.idWeek === userChoosePackage.idWeek,
     ) as UserChoosePackage;
 
+    let discountAmount = 0;
+    if (customerData.promote === import.meta.env.VITE_PROMOTE_DISCOUNT_NUMBER) {
+      discountAmount = Number(import.meta.env.VITE_PROMOTE_EXACT_NUMBER);
+
+    } else if (customerData.promote === import.meta.env.VITE_PROMOTE_DISCOUNT_PERCENT) {
+      discountAmount = Math.round(pricePackageChosen?.price * userChoosePackage.quantity! * Number(import.meta.env.VITE_PROMOTE_EXACT_PERCENT));
+      
+    } else discountAmount = 0;
+
+    console.log(discountAmount);
+
     const shipTotal = customerData.feeShip
       ? customerData.feeShip * selectedPlan * weeksCount
       : 0;
+
     return {
       foodTotal: pricePackageChosen,
       shipTotal,
-      finalTotal: pricePackageChosen?.price * userChoosePackage.quantity + shipTotal,
+      finalTotal: pricePackageChosen?.price * userChoosePackage.quantity! + shipTotal - discountAmount,
     };
   }, [
     selectedMeals,
@@ -173,6 +186,7 @@ export function useAppState() {
     weeksCount,
     customerData.district,
     customerData.feeShip,
+    customerData.promote,
     selectedPlan,
     userChoosePackage.quantity,
   ]);

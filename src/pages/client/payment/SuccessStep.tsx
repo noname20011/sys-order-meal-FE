@@ -276,7 +276,7 @@ export const SuccessStep = ({
                   </span>
                 </div>
                 <span className="text-sm font-bold text-brand-black">
-                  {(displayPackagePrice * userChoosePackage.quantity).toLocaleString("vi-VN")}₫
+                  {(displayPackagePrice * userChoosePackage.quantity!).toLocaleString("vi-VN")}₫
                 </span>
               </div>
               <div className="flex justify-between items-center">

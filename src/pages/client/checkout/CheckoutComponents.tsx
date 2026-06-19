@@ -22,6 +22,7 @@ import {
   Truck,
   User,
 } from "lucide-react";
+import { env } from "process";
 import { useEffect, useState } from "react";
 
 interface CheckoutFormProps {
@@ -228,6 +229,7 @@ export const Step3Information = ({
   totals,
   selectedMealCount,
   selectedPlan,
+  appliedDiscountCode, setAppliedDiscountCode,
   onBack,
   onNext,
 }: any) => {
@@ -266,6 +268,7 @@ export const Step3Information = ({
             selectedPlan={selectedPlan}
             weeksCount={weeksCount}
             userChoosePackage={userChoosePackage}
+            setCustomerData={setCustomerData}
             district={district as District}
           />
         </div>
@@ -305,6 +308,7 @@ export const PriceBreakdown = ({
   weeksCount,
   district,
   customerData,
+  setCustomerData
 }: {
   userChoosePackage: UserChoosePackage;
   totals: any;
@@ -312,8 +316,23 @@ export const PriceBreakdown = ({
   selectedPlan: number;
   weeksCount: number;
   district: District;
-  customerData: any;
+  customerData: Customer;
+  setCustomerData: (data: Customer) => void;
 }) => {
+  const [couponInput, setCouponInput] = useState<string>('');
+  const [message, setMessageErr] = useState({success: "", err: ""});
+
+  const handleApplyCoupon = () => {
+
+    if (couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_NUMBER && couponInput !== import.meta.env.VITE_PROMOTE_DISCOUNT_PERCENT) {
+      setCustomerData({...customerData, promote: couponInput})
+      setMessageErr({success: "", err: 'Mã giảm giá không chính xác'});
+    } else {
+      setCustomerData({...customerData, promote: couponInput})
+      setMessageErr({success: "Áp mã giảm giá thành công", err: ''});
+    }
+  };
+
   return (
     <div className="bg-white p-8 md:p-10 rounded-[2.5rem] card-shadow border border-brand-gray-100 relative overflow-hidden">
       <ShoppingBag className="absolute -bottom-6 -right-6 w-32 h-32 text-brand-orange opacity-5" />
@@ -366,6 +385,34 @@ export const PriceBreakdown = ({
               {totals.shipTotal.toLocaleString("vi-VN")}₫
             </span>
           </div>
+
+          {/* Promotion / Discount Input box */}
+          <div className="bg-brand-gray-50/50 p-4 rounded-xl border border-brand-gray-100">
+            <p className="text-brand-gray-900/50 text-[11px] font-bold uppercase tracking-wider mb-2">Mã Khuyến Mãi</p>
+            <div className="flex gap-2">
+              <input 
+                type="text"
+                value={couponInput}
+                onChange={(e) => setCouponInput(e.target.value)}
+                placeholder="Nhập mã"
+                className="flex-1 bg-white border border-brand-gray-200 rounded-xl px-4 py-2.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-orange/30 disabled:bg-brand-gray-100 disabled:text-brand-gray-900/40 uppercase tracking-wide placeholder:normal-case placeholder:font-normal placeholder:text-brand-gray-900/30"
+                />
+              <button
+                type="button"
+                onClick={handleApplyCoupon}
+                className="px-5 py-2.5 rounded-2xl bg-brand-orange text-white font-extrabold text-xs tracking-wider uppercase shadow-md shadow-brand-orange/15 hover:scale-[1.02] active:scale-95 transition-all shrink-0"
+              >
+                Dùng
+              </button>
+            </div>
+            {message.err !== "" && <p className="text-[10px] text-brand-gray-900/45 mt-2 font-medium">
+                <code className="font-mono text-red-600 font-bold bg-brand-orange/5 px-1 rounded">{message.err}</code>
+            </p>}
+            {message.success !== "" && <p className="text-[10px] text-brand-gray-900/45 mt-2 font-medium">
+                <code className="font-mono text-green-600 font-bold bg-brand-orange/5 px-1 rounded">{message.success}</code>
+            </p>}
+          </div>
+
         </div>
         <div className="flex justify-between items-center pt-4">
           <span className="text-lg font-bold text-brand-gray-900">
