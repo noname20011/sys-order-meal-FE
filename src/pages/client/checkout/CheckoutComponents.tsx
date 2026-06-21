@@ -137,7 +137,7 @@ export const CheckoutForm = ({
         <InputNumber
           icon={<Ship size={18} className="text-brand-orange" />}
           placeholder="Phí ship"
-          value={customerData.feeShip.toString()}
+          value={(customerData.feeShip).toString()}
           onChange={(value) =>
             setCustomerData({ ...customerData, feeShip: value })
           }
@@ -373,7 +373,7 @@ export const PriceBreakdown = ({
               {district?.name || "Chưa chọn khu vực"}
             </p>
             <span className="font-bold text-lg text-brand-black">
-              {(customerData?.feeShip || 0).toLocaleString("vi-VN")}₫
+              {(customerData?.feeShip < 1000 ? customerData?.feeShip * 1000 : customerData?.feeShip || 0).toLocaleString("vi-VN")}₫
             </span>
           </div>
 
