@@ -243,7 +243,7 @@ export function useAppState() {
       formDataObj.append("fullName", customerData.fullName);
       formDataObj.append("district", DISTRICT_FEES.find((d) => d.id === customerData.district)?.name || "");
       formDataObj.append("address", customerData.address);
-      formDataObj.append("shipFee", customerData.feeShip.toString());
+      formDataObj.append("shipFee", totals.shipTotal.toString());
       formDataObj.append("timeReceive", customerData.timeReceive);
       formDataObj.append("totalPrice", totals.finalTotal.toString());
       formDataObj.append(
