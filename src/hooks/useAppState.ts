@@ -169,10 +169,10 @@ export function useAppState() {
       
     } else discountAmount = 0;
 
-    console.log(discountAmount);
-
-    const shipTotal = customerData.feeShip
-      ? customerData.feeShip * selectedPlan * weeksCount
+    // if user type 10đ < 1000đ auto * 1000
+    const formatShip = customerData.feeShip < 1000 ? customerData.feeShip * 1000 : customerData.feeShip;
+    const shipTotal = formatShip
+      ? formatShip * selectedPlan * weeksCount
       : 0;
 
     return {
