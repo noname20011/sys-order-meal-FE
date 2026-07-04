@@ -1,6 +1,8 @@
+import { UserChoosePackage } from "@/types";
 import { Calendar } from "lucide-react";
 
 interface InputProps {
+  infoPackage: UserChoosePackage;
   label: string;
   placeholder?: string;
   value: string;
@@ -8,14 +10,8 @@ interface InputProps {
   onChange: (value: string) => void;
 }
 
-interface InputProps {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-}
-
 const InputTimeAutoFill = (props: InputProps) => {
-  const { label, value, weeksCount, onChange } = props;
+  const { label, value, weeksCount, onChange, infoPackage } = props;
   return (
     <div className="space-y-3">
       <label className="text-sm font-bold text-brand-gray-900/60 ml-1">
@@ -29,7 +25,13 @@ const InputTimeAutoFill = (props: InputProps) => {
             const startD = new Date(value);
             if (isNaN(startD.getTime())) return "Ngày không hợp lệ";
             const endD = new Date(startD);
-            endD.setDate(endD.getDate() + (weeksCount * 7 - 1));
+            if (infoPackage.idWeek.includes("week") && infoPackage.idDay.includes("5-days")) {
+              endD.setDate(endD.getDate() + (weeksCount * 5 - 1));
+            } else if (infoPackage.idWeek.includes("week") && infoPackage.idDay.includes("6-days")) {
+              endD.setDate(endD.getDate() + (weeksCount * 6 - 1));
+            } else {
+              endD.setDate(endD.getDate() + (weeksCount * 7 - 1));
+            }
             const day = String(endD.getDate()).padStart(2, "0");
             const month = String(endD.getMonth() + 1).padStart(2, "0");
             const year = endD.getFullYear();

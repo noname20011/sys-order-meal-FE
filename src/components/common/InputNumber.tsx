@@ -12,15 +12,17 @@ const InputNumber = (props: InputProps) => {
   const { label, placeholder, value, onChange, icon } = props;
 
   const formatMoney = (value: string) => {
-  const number = value.replace(/\D/g, "");
+    if (!value) return "";
+    const number = value.replace(/\D/g, "");
 
-  return Number(number).toLocaleString("en-US");
-};
+    return Number(number).toLocaleString("en-US");
+  };
 
   const parseNumber = (e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
     const convert = Number(e.target.value.replace(/,/g, ""));
     onChange(convert);
   };
+
 
   return (
     <div className="space-y-3">
@@ -35,7 +37,7 @@ const InputNumber = (props: InputProps) => {
         )}
         <input
           type="text"
-          value={formatMoney(value)}
+          value={formatMoney(value) || ""}
           onChange={(e) => parseNumber(e)}
           className="input-field pl-10! truncate line-clamp-1 w-full"
           placeholder={placeholder}
