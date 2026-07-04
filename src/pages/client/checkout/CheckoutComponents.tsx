@@ -26,6 +26,7 @@ import { env } from "process";
 import { useEffect, useState } from "react";
 
 interface CheckoutFormProps {
+  userChoosePackage: UserChoosePackage;
   customerData: Customer;
   setCustomerData: (data: Customer) => void;
   allCustomers: Customer[];
@@ -39,6 +40,7 @@ interface CheckoutFormProps {
 }
 
 export const CheckoutForm = ({
+  userChoosePackage,
   customerData,
   setCustomerData,
   districts,
@@ -139,7 +141,7 @@ export const CheckoutForm = ({
           placeholder="Phí ship"
           value={(customerData.feeShip).toString()}
           onChange={(value) =>
-            setCustomerData({ ...customerData, feeShip: value })
+            setCustomerData({ ...customerData, feeShip: value.toString() })
           }
           label="*Phí ship (cho 1 ngày)"
         />
@@ -153,6 +155,7 @@ export const CheckoutForm = ({
           label="*Ngày bắt đầu"
         />
         <InputTimeAutoFill
+          infoPackage={userChoosePackage}
           placeholder="Phí ship"
           value={customerData.startDate.toString()}
           weeksCount={weeksCount}
@@ -229,7 +232,6 @@ export const Step3Information = ({
   totals,
   selectedMealCount,
   selectedPlan,
-  appliedDiscountCode, setAppliedDiscountCode,
   onBack,
   onNext,
 }: any) => {
@@ -248,6 +250,7 @@ export const Step3Information = ({
 
       <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-start">
         <CheckoutForm
+          userChoosePackage={userChoosePackage}
           customerData={customerData}
           setCustomerData={setCustomerData}
           allCustomers={allCustomers}
@@ -281,7 +284,8 @@ export const Step3Information = ({
             customerData.phone &&
             customerData.address &&
             customerData.district &&
-            customerData.timeReceive
+            customerData.timeReceive &&
+            customerData.feeShip
           )
             onNext();
           else setIsAlert(true);
@@ -294,7 +298,7 @@ export const Step3Information = ({
       <GlassAlert
         isOpen={isAlert}
         onClose={() => setIsAlert(false)}
-        message="Các trường thông tin không được bỏ trống"
+        message="Các trường thông tin, phí ship không được bỏ trống"
       />
     </div>
   );
@@ -373,7 +377,7 @@ export const PriceBreakdown = ({
               {district?.name || "Chưa chọn khu vực"}
             </p>
             <span className="font-bold text-lg text-brand-black">
-              {(customerData?.feeShip < 1000 ? customerData?.feeShip * 1000 : customerData?.feeShip || 0).toLocaleString("vi-VN")}₫
+              {(Number(customerData?.feeShip) < 1000 ? Number(customerData?.feeShip) * 1000 : Number(customerData?.feeShip) || 0).toLocaleString("vi-VN")}₫
             </span>
           </div>
 

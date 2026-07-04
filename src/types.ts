@@ -23,7 +23,7 @@ export interface Customer {
   fullName: string;
   address: string;
   district: string;
-  feeShip: number;
+  feeShip: string;
   timeReceive: string;
   startDate: string;
   endDate: string;

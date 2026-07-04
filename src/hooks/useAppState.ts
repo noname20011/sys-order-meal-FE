@@ -41,7 +41,7 @@ export function useAppState() {
     address: "",
     district: "",
     timeReceive: "",
-    feeShip: 0,
+    feeShip: "",
     startDate: "",
     endDate: "",
     promote: "",
@@ -170,7 +170,8 @@ export function useAppState() {
     } else discountAmount = 0;
 
     // if user type 10đ < 1000đ auto * 1000
-    const formatShip = customerData.feeShip < 1000 ? customerData.feeShip * 1000 : customerData.feeShip;
+    const feeShip = customerData.feeShip !== "" ? Number(customerData.feeShip) : 0;
+    const formatShip = feeShip < 1000 ? feeShip * 1000 : feeShip;
     const shipTotal = formatShip
       ? formatShip * selectedPlan * weeksCount
       : 0;
