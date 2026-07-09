@@ -230,7 +230,13 @@ export function useAppState() {
           formattedStartDate = `${sDay}/${sMonth}/${sYear}`;
 
           const endD = new Date(startD);
-          endD.setDate(endD.getDate() + (weeksCount * 7 - 1));
+          if (userChoosePackage.idWeek.includes("week") && userChoosePackage.idDay.includes("5-days")) {
+            endD.setDate(endD.getDate() + (weeksCount * 5 - 1));
+          } else if (userChoosePackage.idWeek.includes("week") && userChoosePackage.idDay.includes("6-days")) {
+            endD.setDate(endD.getDate() + (weeksCount * 6 - 1));
+          } else {
+            endD.setDate(endD.getDate() + (weeksCount * 7 - 1));
+          }
           const eDay = String(endD.getDate()).padStart(2, "0");
           const eMonth = String(endD.getMonth() + 1).padStart(2, "0");
           const eYear = endD.getFullYear();

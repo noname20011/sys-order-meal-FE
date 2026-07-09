@@ -1,16 +1,15 @@
+import { PageWrapper } from "@/components/common/Layout";
+import {
+  DURATIONS,
+  MEAL_COUNTS,
+  TIMEFRAMES,
+  USER_CHOOSE_PACKAGE
+} from "@/constants";
+import { cn } from "@/lib/utils";
 import { UserChoosePackage } from "@/types";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { PageWrapper } from "@/components/common/Layout";
-import {
-  AVG_MEAL_PRICE,
-  DURATIONS,
-  MEAL_COUNTS,
-  TIMEFRAMES,
-  USER_CHOOSE_PACKAGE,
-} from "@/constants";
-import { cn } from "@/lib/utils";
 import QuantityPopup from "./QuantityPopup";
 
 interface SelectionWizardProps {
@@ -325,7 +324,7 @@ export const SelectionWizard = ({
       {isQuantityPopupOpen && (
         <QuantityPopup
           setIsQuantityPopupOpen={setIsQuantityPopupOpen}
-          packageQuantity={userChoosePackage.quantity}
+          packageQuantity={userChoosePackage.quantity ?? 1}
           setUserChoosePackage={setUserChoosePackage}
           selectedMealCount={selectedMealCount}
           onNext={onNext}
