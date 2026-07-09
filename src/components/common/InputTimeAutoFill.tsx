@@ -7,11 +7,10 @@ interface InputProps {
   placeholder?: string;
   value: string;
   weeksCount: number;
-  onChange: (value: string) => void;
 }
 
 const InputTimeAutoFill = (props: InputProps) => {
-  const { label, value, weeksCount, onChange, infoPackage } = props;
+  const { label, value, weeksCount, infoPackage } = props;
   return (
     <div className="space-y-3">
       <label className="text-sm font-bold text-brand-gray-900/60 ml-1">

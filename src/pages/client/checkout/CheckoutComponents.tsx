@@ -160,9 +160,6 @@ export const CheckoutForm = ({
           value={customerData.startDate.toString()}
           weeksCount={weeksCount}
           label="*Ngày kết thúc"
-          onChange={(value) =>
-            setCustomerData({ ...customerData, endDate: value })
-          }
         />
         <div className="md:col-span-2 space-y-3">
           <label className="text-sm font-bold text-brand-gray-900/60 ml-1">
