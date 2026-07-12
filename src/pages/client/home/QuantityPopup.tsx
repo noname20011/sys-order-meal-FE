@@ -20,6 +20,7 @@ const QuantityPopup = (props: QuantityPopupProps) => {
     onNext,
   } = props;
 
+  console.log("QuantityPopup rendered with packageQuantity:", packageQuantity);
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-200 flex items-center justify-center p-4">
@@ -98,7 +99,7 @@ const QuantityPopup = (props: QuantityPopupProps) => {
             </div>
             <button
               type="button"
-              onClick={() => setUserChoosePackage((prev) => ({ ...prev, quantity: prev.quantity ?? 1 + 1 }))}
+              onClick={() => setUserChoosePackage((prev) => ({ ...prev, quantity: (prev.quantity ?? 1) + 1 }))}
               className="w-12 h-12 rounded-full bg-brand-orange hover:bg-brand-orange/90 flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-brand-orange/25 transition-all active:scale-95 text-center shrink-0"
             >
               +
