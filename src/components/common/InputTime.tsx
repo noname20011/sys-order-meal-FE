@@ -11,6 +11,21 @@ interface InputProps {
 const InputTime = (props: InputProps) => {
 const { label, value, onChange, icon } = props;
 
+  const getNextMonday = () => {
+    const today = new Date();
+
+    // Chủ nhật = 0, Thứ 2 = 1
+    const day = today.getDay();
+
+    // số ngày cần cộng để tới thứ 2 tuần sau
+    const daysUntilNextMonday = ((8 - day) % 7) || 7;
+
+    const nextMonday = new Date(today);
+    nextMonday.setDate(today.getDate() + daysUntilNextMonday);
+
+    return nextMonday.toISOString().split("T")[0];
+  };
+
   return (
     <div className="space-y-3">
       <label className="text-sm font-bold text-brand-gray-900/60 ml-1">
@@ -27,7 +42,7 @@ const { label, value, onChange, icon } = props;
           value={value || ""}
           onChange={(e) => onChange(e.target.value)}
           className="input-field pl-10! pr-4 text-brand-black cursor-pointer"
-          min={new Date().toISOString().split("T")[0]}
+          min={getNextMonday()}
           id="checkout_start_date"
         />
       </div>
