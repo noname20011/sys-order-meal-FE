@@ -178,7 +178,7 @@ export const MealSelection = ({
                     className="w-auto h-14 md:h-33 object-cover mb-0.5 md:mb-1"
                     alt="dish"
                   />
-                  <p className="absolute top-[12%] right-[2%] xs:right-[5%] md:right-[12%] font-meal text-[8px] sm:text-xl text-brand-black h-fit max-w-8 sm:max-w-16 sm:leading-tight sm:tracking-wider font-light">
+                  <p className="absolute top-[12%] right-[2%] xs:right-[5%] md:right-[12%] font-meal text-[.5rem] sm:text-[1.1rem] text-brand-black h-fit max-w-8 sm:max-w-16 sm:leading-tight sm:tracking-wider font-light">
                     {meal.dishName}
                   </p>
                 </motion.div>
