@@ -21,20 +21,20 @@ export const MEAL_COUNTS = [
 
 export const USER_CHOOSE_PACKAGE: UserChoosePackage[] = [
   { idWeek: "week", idDay: "5-days", idMeal: "1-meal", price: 280000},
-  { idWeek: "week", idDay: "5-days", idMeal: "2-meals", price: 510000},
-  { idWeek: "week", idDay: "5-days", idMeal: "3-meals", price: 790000},
+  { idWeek: "week", idDay: "5-days", idMeal: "2-meals", price: 549000},
+  { idWeek: "week", idDay: "5-days", idMeal: "3-meals", price: 819000},
 
-  { idWeek: "week", idDay: "6-days", idMeal: "1-meal", price: 300000},
-  { idWeek: "week", idDay: "6-days", idMeal: "2-meals", price: 550000},
-  { idWeek: "week", idDay: "6-days", idMeal: "3-meals", price: 840000},
+  { idWeek: "week", idDay: "6-days", idMeal: "1-meal", price: 329000},
+  { idWeek: "week", idDay: "6-days", idMeal: "2-meals", price: 629000},
+  { idWeek: "week", idDay: "6-days", idMeal: "3-meals", price: 939000},
 
-  { idWeek: "month", idDay: "5-days", idMeal: "1-meal", price: 1050000},
-  { idWeek: "month", idDay: "5-days", idMeal: "2-meals", price: 1900000},
-  { idWeek: "month", idDay: "5-days", idMeal: "3-meals", price: 3100000},
+  { idWeek: "month", idDay: "5-days", idMeal: "1-meal", price: 1099000},
+  { idWeek: "month", idDay: "5-days", idMeal: "2-meals", price: 2149000},
+  { idWeek: "month", idDay: "5-days", idMeal: "3-meals", price: 3199000},
 
-  { idWeek: "month", idDay: "6-days", idMeal: "1-meal", price: 1150000},
-  { idWeek: "month", idDay: "6-days", idMeal: "2-meals", price: 2100000},
-  { idWeek: "month", idDay: "6-days", idMeal: "3-meals", price: 3300000},
+  { idWeek: "month", idDay: "6-days", idMeal: "1-meal", price: 1299000},
+  { idWeek: "month", idDay: "6-days", idMeal: "2-meals", price: 2399000},
+  { idWeek: "month", idDay: "6-days", idMeal: "3-meals", price: 3499000},
 ]
 
 export const AVG_MEAL_PRICE = 50000;
