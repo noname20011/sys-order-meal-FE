@@ -115,7 +115,7 @@ export const MOCK_MEAL_DATA: MenuItem[] = [
       { id: 8, weekday: "T4", mealType: "Trưa", dishName: "Cơm gạo lứt cá cải ngồng", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1785235536/comgaolutcaapchao_kog3d4.png", price: 100000 },
       { id: 9, weekday: "T4", mealType: "Chiều", dishName: "Cá áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779788184/caapchaoraucu_en3fdn.png", price: 100000 },
 
-      { id: 10, weekday: "T5", mealType: "Sáng", dishName: "Cá basa áp chảo rau củ", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1781522310/cabasaphileapchao_lobane.png", price: 100000 },
+      { id: 10, weekday: "T5", mealType: "Sáng", dishName: "Gỏi cuốn ức gà Healthy", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1790443472/goicuonucgahealthy_d71onw.png", price: 100000 },
       { id: 11, weekday: "T5", mealType: "Trưa", dishName: "Hủ tiếu gà gạo lứt ức gà sốt cà chua", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1790007783/hutieugaolutucgasotcachua_hjvuhu.png", price: 100000 },
       { id: 12, weekday: "T5", mealType: "Chiều", dishName: "Ức gà áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1780470080/ucgaapchao_bs0pmo.png", price: 100000 },
 
