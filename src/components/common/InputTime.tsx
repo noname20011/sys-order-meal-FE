@@ -42,7 +42,8 @@ const { label, value, onChange, icon } = props;
           value={value || ""}
           onChange={(e) => onChange(e.target.value)}
           className="input-field pl-10! pr-4 text-brand-black cursor-pointer"
-          min={getNextMonday()}
+          min={new Date().toISOString().split("T")[0]}
+          // min={getNextMonday()}
           id="checkout_start_date"
         />
       </div>
