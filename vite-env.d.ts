@@ -12,12 +12,13 @@ declare module "*.png" {
 
 
 interface ImportMetaEnv {
-  readonly VITE_MY_BANK: string;
+  readonly MY_BANK_ACCOUNT: string;
   readonly VITE_API_URL: string;
   readonly VITE_PROMOTE_DISCOUNT_NUMBER: string;
   readonly VITE_PROMOTE_DISCOUNT_PERCENT: string;
   readonly VITE_PROMOTE_EXACT_PERCENT: number;
   readonly VITE_PROMOTE_EXACT_NUMBER: number;
+  readonly VITE_GOOGLE_MAPS_API_KEY: string;
   // thêm các biến khác ở đây
 }
 
