@@ -77,10 +77,10 @@ export const PaymentStep = ({
             />
             <div className="p-4 bg-brand-orange-light rounded-xl border border-brand-orange/10">
               <p className="text-brand-gray-900/40 font-bold tracking-widest text-[10px] uppercase mb-1">
-                Chủ tài khoản: NGUYỄN HÙNG HẢI
+                Chủ tài khoản: NGUYỄN TUYẾT NHI
               </p>
               <p className="text-brand-orange font-bold text-lg font-mono tracking-wider">
-                107875885089 - VIETINBANK
+                1032204486 - VIETCOMBANK
               </p>
             </div>
           </div>
