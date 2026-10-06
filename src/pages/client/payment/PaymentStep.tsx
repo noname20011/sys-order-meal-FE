@@ -71,7 +71,7 @@ export const PaymentStep = ({
         <div className="text-center space-y-8">
           <div className="p-6 bg-white rounded-4xl shadow-xl border border-brand-gray-100 inline-block relative">
             <img
-              src={`https://img.vietqr.io/image/vietcombank-1032204486-compact2.png?amount=${totalAmount}&addInfo=DH${phone}`}
+              src={`${import.meta.env.VITE_MY_BANK}?amount=${totalAmount}&addInfo=DH${phone}`}
               alt="QR Code"
               className="w-72 h-72 mx-auto"
             />
