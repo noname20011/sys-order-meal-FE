@@ -12,7 +12,7 @@ declare module "*.png" {
 
 
 interface ImportMetaEnv {
-  readonly MY_BANK_ACCOUNT: string;
+  readonly VITE_MY_BANK: string;
   readonly VITE_API_URL: string;
   readonly VITE_PROMOTE_DISCOUNT_NUMBER: string;
   readonly VITE_PROMOTE_DISCOUNT_PERCENT: string;
