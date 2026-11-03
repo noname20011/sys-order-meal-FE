@@ -103,29 +103,29 @@ export const DISTRICT_FEES = [
 ];
 
 export const MOCK_MEAL_DATA: MenuItem[] = [
-      { id: 1, weekday: "T2", mealType: "Sáng", dishName: "Salad ức gà", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784495/saladucga_nyoryq.png", price: 100000 },
-      { id: 2, weekday: "T2", mealType: "Trưa", dishName: "Cơm gạo lứt ức gà sốt tiêu, cải thìa", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1783350221/comgaolutucgasotnam_ahxwj9.png", price: 100000 },
-      { id: 3, weekday: "T2", mealType: "Chiều", dishName: "Ức gà áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1786446113/ucgaapchaoraucu_prmth0.png", price: 100000 },
+      { id: 1, weekday: "T2", mealType: "Sáng", dishName: "Ức gà áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1786446113/ucgaapchaoraucu_prmth0.png", price: 100000 },
+      { id: 2, weekday: "T2", mealType: "Trưa", dishName: "Cơm gạo lứt cá áp chảo cải ngọt", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1785235536/comgaolutcaapchao_kog3d4.png", price: 100000 },
+      { id: 3, weekday: "T2", mealType: "Chiều", dishName: "Salad ức gà", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784495/saladucga_nyoryq.png", price: 100000 },
 
-      { id: 4, weekday: "T3", mealType: "Sáng", dishName: "Gỏi cuốn bò Healthy", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1790443472/goicuonucgahealthy_d71onw.png", price: 100000 },
-      { id: 5, weekday: "T3", mealType: "Trưa", dishName: "Hủ tiếu gạo lứt bò", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1793098740/hutieugaolutbo_mgk7lg.png", price: 100000 },
-      { id: 6, weekday: "T3", mealType: "Chiều", dishName: "Salad bò", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1780469850/saladbo_dz1qyy.png", price: 100000 },
+      { id: 4, weekday: "T3", mealType: "Sáng", dishName: "Protein cá", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1789469889/saladcabasa_jsmmav.png", price: 100000 },
+      { id: 5, weekday: "T3", mealType: "Trưa", dishName: "Bún gạo lứt cá basa sốt chanh dây", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1788850510/bungaolutcabasa_r5ih1p.png", price: 100000 },
+      { id: 6, weekday: "T3", mealType: "Chiều", dishName: "Cá basa áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1781522310/cabasaphileapchao_lobane.png", price: 100000 },
 
-      { id: 7, weekday: "T4", mealType: "Sáng", dishName: "Protein luộc", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784844/PROTEINLUOC_dvzojp.png", price: 100000 },
-      { id: 8, weekday: "T4", mealType: "Trưa", dishName: "Bún gạo lứt cá, đậu que", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1793098740/bungaolutcadauque_q5v0kn.png", price: 100000 },
-      { id: 9, weekday: "T4", mealType: "Chiều", dishName: "Cá áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779788184/caapchaoraucu_en3fdn.png", price: 100000 },
+      { id: 7, weekday: "T4", mealType: "Sáng", dishName: "Sandwich yến mạch ức gà healthy", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1782052728/sandwichucga_fp25vi.png", price: 100000 },
+      { id: 8, weekday: "T4", mealType: "Trưa", dishName: "Nui gạo lứt ức gà xào nấm", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1784040953/nuigaolutgasotnam_a7fjmj.png", price: 100000 },
+      { id: 9, weekday: "T4", mealType: "Chiều", dishName: "Salad ức gà", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784495/saladucga_nyoryq.png", price: 100000 },
 
-      { id: 10, weekday: "T5", mealType: "Sáng", dishName: "Protein luộc", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784844/PROTEINLUOC_dvzojp.png", price: 100000 },
+      { id: 10, weekday: "T5", mealType: "Sáng", dishName: "Protein chả ức gà", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1783351063/chaucgaapchao_gam5uc.png", price: 100000 },
       { id: 11, weekday: "T5", mealType: "Trưa", dishName: "Cơm gạo lứt ức gà rau củ", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1783350993/comgaolutchaucgasottieu_nkvugy.png", price: 100000 },
       { id: 12, weekday: "T5", mealType: "Chiều", dishName: "Chả ức gà áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1786446113/ucgaapchaoraucu_prmth0.png", price: 100000 },
 
-      { id: 13, weekday: "T6", mealType: "Sáng", dishName: "Salad tôm trứng", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779785646/saladtomtrung_ogzeul.png", price: 100000 },
-      { id: 14, weekday: "T6", mealType: "Trưa", dishName: "Cơm gạo lứt tôm băm sốt tiêu", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1793098740/comgaoluttombamsottieu_rgmavi.png", price: 100000 },
-      { id: 15, weekday: "T6", mealType: "Chiều", dishName: "Tôm áp chảo rau củ", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779788970/tomapchaoraucu_fcuplx.png", price: 100000 },
+      { id: 13, weekday: "T6", mealType: "Sáng", dishName: "Salad bò", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1780469850/saladbo_dz1qyy.png", price: 100000 },
+      { id: 14, weekday: "T6", mealType: "Trưa", dishName: "Bánh canh gạo lứt bò sốt tiêu", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1783350221/bungaolutnuoctuongbokho_ifkkzo.png", price: 100000 },
+      { id: 15, weekday: "T6", mealType: "Chiều", dishName: "Bò áp chảo bí đỏ", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1781522310/boapchaobido_j985nb.png", price: 100000 },
       
-      { id: 16, weekday: "T7", mealType: "Sáng", dishName: "Protein luộc", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784844/PROTEINLUOC_dvzojp.png", price: 100000 },
-      { id: 17, weekday: "T7", mealType: "Trưa", dishName: "Nui gạo lứt ức gà", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1784040953/nuigaolutgasotnam_a7fjmj.png", price: 100000 },
-      { id: 18, weekday: "T7", mealType: "Chiều", dishName: "Ức gà áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1786446113/ucgaapchaoraucu_prmth0.png", price: 100000 },
+      { id: 16, weekday: "T7", mealType: "Sáng", dishName: "Protein tôm", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779788970/tomapchaoraucu_fcuplx.png", price: 100000 },
+      { id: 17, weekday: "T7", mealType: "Trưa", dishName: "Cơm gạo lứt tôm bông cải", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1783350221/comgaoluttombongcai_egb19n.png", price: 100000 },
+      { id: 18, weekday: "T7", mealType: "Chiều", dishName: "salad tôm", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779785646/saladtomtrung_ogzeul.png", price: 100000 },
     ];
 
 export const TIME_DELIVERY = [
