@@ -57,7 +57,7 @@ export const MealSelection = ({
         subtitle={`Gói ${selectedWeek} tuần x ${selectedPlan} ngày × ${effectiveMealCount} món/ngày.`}
       />
 
-      <div className="max-w-5xl mx-auto px-4 pb-10">
+      <div className="max-w-5xl mx-auto pb-10">
         {/* Selection Info Card */}
         <div className="sticky top-22 z-50 mb-10 bg-white p-3 rounded-xl card-shadow border border-brand-gray-100 flex flex-col md:flex-row items-center justify-between gap-2">
           <div className="flex flex-row gap-4 w-full items-center">
