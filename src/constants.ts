@@ -104,7 +104,7 @@ export const DISTRICT_FEES = [
 
 export const MOCK_MEAL_DATA: MenuItem[] = [
       { id: 1, weekday: "T2", mealType: "Sáng", dishName: "Ức gà áp chảo", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1786446113/ucgaapchaoraucu_prmth0.png", price: 100000 },
-      { id: 2, weekday: "T2", mealType: "Trưa", dishName: "Cơm gạo lứt cá áp chảo cải ngọt", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1785235536/comgaolutcaapchao_kog3d4.png", price: 100000 },
+      { id: 2, weekday: "T2", mealType: "Trưa", dishName: "Cơm gạo lứt ức gà cải ngọt", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1785235536/comgaolutcaapchao_kog3d4.png", price: 100000 },
       { id: 3, weekday: "T2", mealType: "Chiều", dishName: "Salad ức gà", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1779784495/saladucga_nyoryq.png", price: 100000 },
 
       { id: 4, weekday: "T3", mealType: "Sáng", dishName: "Protein cá", image: "https://res.cloudinary.com/dst8bybiw/image/upload/v1789469889/saladcabasa_jsmmav.png", price: 100000 },
