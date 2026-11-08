@@ -7,6 +7,7 @@ import InputTime from "@/components/common/InputTime";
 import InputTimeAutoFill from "@/components/common/InputTimeAutoFill";
 import Select from "@/components/common/Select";
 import TextArea from "@/components/common/TextErea";
+import Checkout from "@/components/google/Checkout";
 import { TIME_DELIVERY, USER_CHOOSE_PACKAGE } from "@/constants";
 import { useFetchData } from "@/hooks/useBaseQuery";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -122,6 +123,7 @@ export const CheckoutForm = ({
           }
           label="Chi tiết địa chỉ"
         />
+        <Checkout/>
         <Select
           label="Giờ giao (7h-14h)"
           placeholder="Sáng/Trưa/Chiều"
@@ -210,6 +212,7 @@ export const CheckoutForm = ({
           </div>
         </div>
       </div>
+      div
     </div>
   );
 };
