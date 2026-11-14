@@ -87,7 +87,7 @@ export const PaymentStep = ({
         </div>
 
         <div className="bg-white p-10 rounded-3xl card-shadow border border-brand-gray-100 relative">
-          <h4 className="text-lg text-brand-black font-extrabold mb-8 flex items-center gap-3 tracking-tight">
+          <h4 className="text-lg text-brand-black font-extrabold mb-4 flex items-center gap-3 tracking-tight">
             <ImageIcon className="w-6 h-6 text-brand-orange" /> Tải hình ảnh
             thanh toán
           </h4>
@@ -111,7 +111,7 @@ export const PaymentStep = ({
             <label
               htmlFor="bill"
               className={cn(
-                "flex flex-col items-center justify-center gap-6 rounded-2xl border-2 border-dashed transition-all cursor-pointer",
+                "flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed transition-all cursor-pointer",
                 paymentProof
                   ? "border-brand-orange bg-brand-orange-light"
                   : "border-brand-gray-100 hover:border-brand-orange/30 hover:bg-brand-gray-50",
@@ -133,7 +133,7 @@ export const PaymentStep = ({
                 </div>
               ) : (
                 <>
-                  <div className="w-16 h-16 bg-brand-gray-50 rounded-2xl flex items-center justify-center text-brand-orange/40 border border-brand-gray-100 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 mt-1 bg-brand-gray-50 rounded-2xl flex items-center justify-center text-brand-orange/40 border border-brand-gray-100 group-hover:scale-110 transition-transform">
                     <ImageIcon className="w-8 h-8" />
                   </div>
 
@@ -177,9 +177,7 @@ export const PaymentStep = ({
           </button>
           <button
             onClick={onSubmit}
-            disabled={
-              (paymentMethod === "transfer" && !paymentProof)
-            }
+            disabled={ isSubmitting || (paymentMethod === "transfer" && !paymentProof) }
             className="flex-2 py-5 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center gap-3 shadow-xl shadow-brand-orange/20 hover:scale-[1.02] active:scale-95 transition-all text-lg disabled:opacity-50 disabled:grayscale disabled:scale-100"
           >
             {isSubmitting ? "Đang xử lý..." : "Xác nhận"}
