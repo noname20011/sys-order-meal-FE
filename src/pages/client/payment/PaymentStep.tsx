@@ -178,7 +178,7 @@ export const PaymentStep = ({
           <button
             onClick={onSubmit}
             disabled={
-              isSubmitting || (paymentMethod === "transfer" && !paymentProof)
+              (paymentMethod === "transfer" && !paymentProof)
             }
             className="flex-2 py-5 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center gap-3 shadow-xl shadow-brand-orange/20 hover:scale-[1.02] active:scale-95 transition-all text-lg disabled:opacity-50 disabled:grayscale disabled:scale-100"
           >
