@@ -212,7 +212,6 @@ export const CheckoutForm = ({
           </div>
         </div>
       </div>
-      div
     </div>
   );
 };
