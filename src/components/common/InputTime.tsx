@@ -45,6 +45,7 @@ const { label, value, onChange, icon } = props;
           min={new Date().toISOString().split("T")[0]}
           // min={getNextMonday()}
           id="checkout_start_date"
+          style={{ WebkitBorderRadius: "16px" }}
         />
       </div>
     </div>
