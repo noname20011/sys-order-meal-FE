@@ -7,9 +7,11 @@ import InputTime from "@/components/common/InputTime";
 import InputTimeAutoFill from "@/components/common/InputTimeAutoFill";
 import Select from "@/components/common/Select";
 import TextArea from "@/components/common/TextErea";
+import Checkout from "@/components/google/Checkout";
 import { TIME_DELIVERY, USER_CHOOSE_PACKAGE } from "@/constants";
 import { useFetchData } from "@/hooks/useBaseQuery";
 import { useDebounce } from "@/hooks/useDebounce";
+// import Checkout from "@/components/google/Checkout";
 import { cn } from "@/lib/utils";
 import customerService from "@/services/customerService";
 import { Customer, District, UserChoosePackage } from "@/types";
@@ -22,7 +24,6 @@ import {
   Truck,
   User,
 } from "lucide-react";
-import { env } from "process";
 import { useEffect, useState } from "react";
 
 interface CheckoutFormProps {
@@ -122,6 +123,7 @@ export const CheckoutForm = ({
           }
           label="Chi tiết địa chỉ"
         />
+        {/* <Checkout/> */}
         <Select
           label="Giờ giao (7h-14h)"
           placeholder="Sáng/Trưa/Chiều"
@@ -210,6 +212,7 @@ export const CheckoutForm = ({
           </div>
         </div>
       </div>
+      div
     </div>
   );
 };
@@ -388,7 +391,7 @@ export const PriceBreakdown = ({
           </div>
 
           {/* Promotion / Discount Input box */}
-          <div className="bg-brand-gray-50/50 p-4 rounded-xl border border-brand-gray-100">
+          {/* <div className="bg-brand-gray-50/50 p-4 rounded-xl border border-brand-gray-100">
             <p className="text-brand-gray-900/50 text-[11px] font-bold uppercase tracking-wider mb-2">Mã Khuyến Mãi</p>
             <div className="flex gap-2">
               <input 
@@ -412,7 +415,7 @@ export const PriceBreakdown = ({
             {message.success !== "" && <p className="text-[10px] text-brand-gray-900/45 mt-2 font-medium">
                 <code className="font-mono text-green-600 font-bold bg-brand-orange/5 px-1 rounded">{message.success}</code>
             </p>}
-          </div>
+          </div> */}
 
         </div>
         <div className="flex justify-between items-center pt-4">
