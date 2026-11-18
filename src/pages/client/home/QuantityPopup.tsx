@@ -38,7 +38,7 @@ const QuantityPopup = (props: QuantityPopupProps) => {
           initial={{ opacity: 0, scale: 0.9, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 15 }}
-          className="bg-white w-full max-w-md rounded-[2.5rem] border border-brand-gray-100 shadow-2xl relative overflow-hidden p-8 flex flex-col items-center text-center z-10"
+          className="bg-white w-full max-w-md rounded-[2.5rem] border border-brand-gray-100 shadow-2xl relative overflow-hidden p-8 flex flex-col items-center text-center z-10 md:mt-20"
         >
           {/* Decorative subtle background gradient blur */}
           <div className="absolute -right-16 -top-16 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl pointer-events-none" />
